@@ -1,6 +1,6 @@
 #!/bin/bash
 
-pacman -Sy ufw openssh
+pacman -S ufw openssh nano --noconfirm
 
 ufw allow ssh
 
@@ -9,5 +9,5 @@ ufw enable
 systemctl start sshd
 
 passwd
-9443
-9443
+
+ip -a
