@@ -8,8 +8,8 @@ timedatectl set-ntp true
 (
   echo g; # Create a new empty GPT partition table
   echo n; # Create a new partition
-  echo ; # Partition number (default is 1)
-  echo ; # First sector (default is 2048)
+  echo 1; # Partition number (default is 1)
+  echo 2048; # First sector (default is 2048)
   echo +512M; # Last sector for EFI system partition
   echo t; # Change partition type
   echo 1; # EFI System partition
@@ -78,4 +78,4 @@ EOF
 
 # Unmount partitions and reboot
 umount -R /mnt
-reboot
+
