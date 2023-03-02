@@ -18,6 +18,7 @@ timedatectl set-ntp true
   echo ; # First sector (default is next free sector)
   echo ; # Last sector (default is entire disk)
   echo t; # Change partition type
+  echo 2;  # Select Pertition
   echo 20; # Linux Filesystem
   echo w; # Write changes to disk
 ) | fdisk /dev/sda
