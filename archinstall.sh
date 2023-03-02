@@ -6,18 +6,19 @@ timedatectl set-ntp true
 # Partition the disk
 # Replace /dev/sda with your disk device
 (
-  echo o; # Create a new empty GPT partition table
+  echo g; # Create a new empty GPT partition table
   echo n; # Create a new partition
   echo ; # Partition number (default is 1)
   echo ; # First sector (default is 2048)
   echo +512M; # Last sector for EFI system partition
-  echo y; # Set partition as bootable
   echo t; # Change partition type
   echo 1; # EFI System partition
   echo n; # Create a new partition
   echo ; # Partition number (default is 2)
   echo ; # First sector (default is next free sector)
   echo ; # Last sector (default is entire disk)
+  echo t; # Change partition type
+  echo 20; # Linux Filesystem
   echo w; # Write changes to disk
 ) | fdisk /dev/sda
 
